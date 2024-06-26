@@ -1,0 +1,171 @@
+<?php
+@include '../database/connect.php';
+
+session_start();
+
+if(!isset($_SESSION['admin_name'])){
+    header('location:../Login/login.php');
+};
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+    <style><?php include('style.css'); ?></style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span class="logo-name">Admin</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="../index.php">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="link-name">Dashboard</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link-name" href="../index.php">Dashboard</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span class="link-name">Users</span>
+                    </a>
+                    <i class="arrow fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link-name" href="#">Users</a></li>
+                    <li><a href="../users/user.php">Add New</a></li>
+                    <li><a href="../users/user-list.php">List</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="icon-link">
+                    <a href="#">
+                        <i class="fa fa-database" aria-hidden="true"></i>
+                        <span class="link-name">Projects</span>
+                    </a>
+                    <i class="arrow fa fa-angle-left" aria-hidden="true"></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link-name" href="#">Projects</a></li>
+                    <li><a href="../Projects/create.php">Add New</a></li>
+                    <li><a href="../Projects/project-list.php">List</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../Task/task-list.php">
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                    <span class="link-name">Tasks</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link-name" href="../Task/task-list.php">Tasks</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../Report/report.php">
+                <i class="fa fa-th-list" aria-hidden="true"></i>
+                    <span class="link-name">Report</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link-name" href="../Report/report.php">Report</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="home-section">
+        
+            <div class="home-content">
+                <i class="bx-menu fa fa-align-justify" aria-hidden="true"></i>
+                <span class="text">Task Management </span>
+            
+                <div class="user">
+                    <div class="bg-img"style="background-image: url(xx)"></div>
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <span><a href="../Login/log-out.php">Logout</a></span>
+                </div>
+            </div>
+        
+
+       
+            <div class="page-header">
+                <h2><?php echo $_SESSION['admin_name'] ?></h2>
+                <small>Home / Dashboard</small>
+            </div>
+
+            <div class="page-content">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>4</h2>
+                            <span><i class="fa fa-database" aria-hidden="true"></i></span>
+                        </div>
+                    
+                        <p>Total Projects</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>3</h2>
+                            <span><i class="fa fa-tasks" aria-hidden="true"></i></span>
+                        </div>
+                        <p>Total Tasks</p>
+                    
+                    </div>
+
+                </div>
+
+
+
+                <div class="records table-responsive">
+                    <div class="record-header">
+                        <span>Project progress</span>
+                    </div>
+
+                    <div>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                        <th>#</th>
+                                    <th>Project</th>
+                                    <th>Progress</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        
+        
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
