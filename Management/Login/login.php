@@ -3,9 +3,8 @@
 
 
 
-
 <?php
-
+//login page 
 include"../database/connect.php";
 
 session_start();
